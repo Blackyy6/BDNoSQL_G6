@@ -1,57 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestión de Jugadores</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Academia de Fútbol - Jugadores</title>
+  <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f1f7f1, #f7f7f7);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #1c0193dd;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+    }
+
+    header img {
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(0,0,0,0.5);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e6efe6;
+      padding-bottom: 0.3rem;
+    }
+
+    ul#lista-jugadores {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    ul#lista-jugadores li {
+      background: #007700cc;
+      padding: 0.8rem 1rem;
+      margin-bottom: 0.8rem;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 6px #003300cc;
+    }
+
+    ul#lista-jugadores button {
+      background: #ff3333;
+      border: none;
+      color: white;
+      font-weight: 700;
+      padding: 0.3rem 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    ul#lista-jugadores button:hover {
+      background: #cc0000;
+    }
+
+    form#form-jugador {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 2rem;
+    }
+
+    form#form-jugador input {
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    form#form-jugador button {
+      grid-column: span 2;
+      background-color: #fafafa;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form#form-jugador button:hover {
+      background-color: #009900;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #003300cc;
+      color: #cfcfcf;
+      font-size: 0.9rem;
+      margin-top: auto;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
+    }
+    
+  </style>
 </head>
-<body class="p-4">
+<body>
+  <header>
+    <img src="https://pngimg.com/uploads/football/football_PNG52789.png" alt="Logo Academia Fútbol" />
+    <h1>Academia Leones FC</h1>
+  </header>
 
-  <h1 class="mb-4">Jugadores</h1>
+  <main>
+    <h2>Lista de Jugadores</h2>
+    <ul id="lista-jugadores"></ul>
 
-  <!-- Formulario -->
-  <form id="jugadorForm" class="mb-4">
-    <input type="hidden" id="jugadorId">
-    <div class="mb-2">
-      <input type="text" id="nombre" class="form-control" placeholder="Nombre" required>
-    </div>
-    <div class="mb-2">
-      <input type="date" id="fecha_nacimiento" class="form-control" placeholder="Fecha de nacimiento" required>
-    </div>
-    <div class="mb-2">
-      <input type="number" id="edad" class="form-control" placeholder="Edad" required>
-    </div>
-    <div class="mb-2">
-      <input type="text" id="posicion" class="form-control" placeholder="Posición" required>
-    </div>
-    <div class="mb-2">
-      <input type="text" id="estado_salud" class="form-control" placeholder="Estado de salud" required>
-    </div>
-    <div class="mb-2">
-      <input type="text" id="contacto_nombre" class="form-control" placeholder="Nombre contacto emergencia" required>
-    </div>
-    <div class="mb-2">
-      <input type="text" id="contacto_telefono" class="form-control" placeholder="Teléfono contacto emergencia" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Guardar</button>
-  </form>
+    <h2>Agregar Nuevo Jugador</h2>
+    <form id="form-jugador">
+      <input type="text" name="nombre" placeholder="Nombre completo" required />
+      <input type="date" name="fecha_nacimiento" required />
+      <input type="number" name="edad" placeholder="Edad" required min="5" max="100" />
+      <input type="text" name="posicion" placeholder="Posición" required />
+      <input type="text" name="categoria_id" placeholder="ID Categoría" />
+      <input type="text" name="equipo_id" placeholder="ID Equipo" />
+      <input type="text" name="estado_salud" placeholder="Estado de Salud" required />
+      <input type="text" name="contacto_nombre" placeholder="Contacto Emergencia Nombre" required />
+      <input type="text" name="contacto_telefono" placeholder="Contacto Emergencia Teléfono" required />
+      <button type="submit">Agregar Jugador</button>
+    </form>
+  </main>
 
-  <!-- Tabla -->
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Edad</th>
-        <th>Posición</th>
-        <th>Estado salud</th>
-        <th>Contacto emergencia</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody id="tablaJugadores"></tbody>
-  </table>
+  <footer>
+    &copy; 2026 Academia Leones FC - Todos los derechos reservados
+  </footer>
 
-  <script src="app.js"></script>
+  <script src="jugador.js"></script>
+
+  
 </body>
+
 </html>
