@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leones FC | Panel Deportivo</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-badge">LF</div>
+        <div>
+          <p class="eyebrow">Sistema deportivo</p>
+          <h1>Leones FC</h1>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="active" href="./index.html">Inicio</a>
+        <a href="./categorias.html">Categorias</a>
+        <a href="./entrenadores.html">Entrenadores</a>
+        <a href="./equipos.html">Equipos</a>
+        <a href="./jugadores.html">Jugadores</a>
+        <a href="./entrenamientos.html">Entrenamientos</a>
+        <a href="./estadios.html">Estadios</a>
+        <a href="./asistencias.html">Asistencias</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <article>
+        <p class="eyebrow">Analisis del dominio</p>
+        <h2>Gestion completa para la academia</h2>
+        <p>
+          El proyecto usa modelos Mongoose conectados entre categorias, entrenadores, equipos,
+          jugadores, entrenamientos, estadios y asistencias. Desde aqui puedes entrar a cada
+          vista CRUD y revisar relaciones mostradas con nombres legibles.
+        </p>
+        <p class="helper">
+          Relaciones detectadas: `Equipo -> Categoria`, `Equipo -> Entrenador`, `Equipo -> Jugador`,
+          `Jugador -> Categoria`, `Jugador -> Equipo`, `Entrenamiento -> Equipo`, `Entrenamiento -> Entrenador`,
+          `Asistencia -> Jugador` y `Asistencia -> Equipo`.
+        </p>
+      </article>
+      <article class="metrics">
+        <div class="metric"><p>Modelos detectados</p><strong>15</strong></div>
+        <div class="metric"><p>Vistas CRUD</p><strong>7</strong></div>
+        <div class="metric"><p>Relaciones clave</p><strong>9</strong></div>
+        <div class="metric"><p>Estado</p><strong>Listo</strong></div>
+      </article>
+    </section>
+
+    <section class="grid">
+      <a class="nav-card" href="./categorias.html"><p class="eyebrow">Base competitiva</p><h3>Categorias</h3><p>Administra `nombre_categoria`, `rango_edad` y `año_competencia`.</p></a>
+      <a class="nav-card" href="./entrenadores.html"><p class="eyebrow">Cuerpo tecnico</p><h3>Entrenadores</h3><p>Gestiona especialidad, experiencia, telefono, correo y estado operativo.</p></a>
+      <a class="nav-card" href="./equipos.html"><p class="eyebrow">Relacion principal</p><h3>Equipos</h3><p>Muestra categoria, entrenador asignado y lista de jugadores con nombres.</p></a>
+      <a class="nav-card" href="./jugadores.html"><p class="eyebrow">Plantilla</p><h3>Jugadores</h3><p>CRUD de jugadores con categoria, equipo y contacto de emergencia.</p></a>
+      <a class="nav-card" href="./entrenamientos.html"><p class="eyebrow">Agenda tecnica</p><h3>Entrenamientos</h3><p>Vista de sesiones con equipo, entrenador, fecha, horarios y objetivo.</p></a>
+      <a class="nav-card" href="./estadios.html"><p class="eyebrow">Infraestructura</p><h3>Estadios</h3><p>Controla nombre, ubicacion, capacidad y tipo de superficie.</p></a>
+      <a class="nav-card" href="./asistencias.html"><p class="eyebrow">Seguimiento</p><h3>Asistencias</h3><p>Registra asistencia por jugador y equipo, con resumenes agrupados.</p></a>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card">
+        <p class="eyebrow">Modelos analizados</p>
+        <h3>Relacionales</h3>
+        <p>`Equipo`, `Jugador`, `Entrenamiento`, `Asistencia`, `Partido`, `Inscripcion`, `Pago`, `Padre` y `Lesion` usan referencias `ObjectId`.</p>
+      </article>
+      <article class="summary-card">
+        <p class="eyebrow">Modelos analizados</p>
+        <h3>Catalogo o maestros</h3>
+        <p>`Categoria`, `Entrenador`, `Estadio`, `Torneo`, `Usuario` y `Notificacion` funcionan como entidades maestras o de soporte.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

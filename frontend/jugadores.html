@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Leones FC | Jugadores</title><link rel="stylesheet" href="./styles.css" /></head>
+
+<body>
+  <main class="shell">
+    <header class="topbar"><div class="brand"><div class="brand-badge">LF</div><div><p class="eyebrow">Leones FC</p><h1>Jugadores</h1></div></div><nav class="nav"><a href="./index.html">Inicio</a><a href="./categorias.html">Categorias</a><a href="./entrenadores.html">Entrenadores</a><a href="./equipos.html">Equipos</a><a class="active" href="./jugadores.html">Jugadores</a><a href="./entrenamientos.html">Entrenamientos</a><a href="./estadios.html">Estadios</a><a href="./asistencias.html">Asistencias</a></nav></header>
+    <section class="hero"><article><p class="eyebrow">Plantilla deportiva</p><h2 id="pageTitle"></h2><p id="pageDescription"></p><p class="helper" id="moduleContext"></p></article><article class="metrics"><div class="metric"><p>Total</p><strong id="stat1"></strong></div><div class="metric"><p>Equipos vinculados</p><strong id="stat2"></strong></div><div class="metric"><p>Posiciones</p><strong id="stat3"></strong></div><div class="metric"><p>Modo</p><strong id="stat4"></strong></div></article></section>
+    <section class="workspace"><article class="panel"><div class="panel-head"><div><h3 id="formTitle"></h3><p class="helper" id="formDescription"></p></div></div><form class="form" id="recordForm"></form><p class="feedback" id="formFeedback"></p></article><article class="panel"><div class="panel-head"><div><h3 id="listTitle"></h3><p class="helper" id="listDescription"></p></div><span class="status" id="statusMessage"></span></div><div class="toolbar"><input id="searchInput" type="search" placeholder="Buscar jugador, posicion o equipo" /><button class="button button--ghost" id="refreshButton" type="button">Actualizar</button></div><div class="table-shell"><table><thead><tr id="tableHeadRow"></tr></thead><tbody id="tableBody"></tbody></table><div class="empty" id="emptyState" hidden>No hay jugadores registrados.</div></div></article></section>
+    <button id="cancelEditButton" hidden></button><div id="extraContent"></div>
+  </main>
+  <script src="./shared.js"></script><script src="./jugadores.js"></script>
+</body>
+</html>
